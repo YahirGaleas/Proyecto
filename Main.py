@@ -35,6 +35,7 @@ def crearUsuario(usuario1):
 
 def main():
     verificador = None
+    verificador2 = True
     usuario1 = usuario()
     perfil1 = perfil()
     analisisresultados1 = analisisresultados()
@@ -46,13 +47,13 @@ def main():
         print("Creemos un usuario para tu persona.")
         crearUsuario(usuario1)
     else:
-        while True:
+        while verificador2:
             mensajeInicio()
             x = input("Ingresa el numero de tu eleccion: ")
             x = verificarEntero(x)
             if x == 1:
                 while True:
-                    usuario1.usuarioExistente(input("Ingrese su correo: "), input("Ingrese su contrasena: "))
+                    usuario1.usuarioExistente(input("Ingrese su correo🍎: "), input("Ingrese su contrasena: "))
                     if usuario1.getNombre() == "":
                         while True:
                             print("Desea: ")
@@ -72,6 +73,8 @@ def main():
                             break
                         elif verificador == 3:
                             exit()
+                    else:
+                        break
             elif x == 2:
                 crearUsuario(usuario1)
                 break
@@ -80,6 +83,7 @@ def main():
             elif x > 3 or x < 1:
                 print("Por favor digite un numero de los mostrados con la opcion.")
                 continue
+            verificador2 = False
 
     perfil1.setEdad(usuario1.getEdad())
     perfil1.setSexo(usuario1.getSexo())
