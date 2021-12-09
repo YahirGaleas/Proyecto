@@ -98,8 +98,9 @@ def main():
             bancopreguntas1.contar()
             a = bancopreguntas1.getConteo()
             analisisresultados1.analisisConteo(a)
-            analisisresultados1.seleccionActividades(a)
-            perfil1.setNivel(analisisresultados1.getNivel())
+            b = analisisresultados1.getNivel()
+            analisisresultados1.seleccionActividades(b)
+            perfil1.setNivel(b)
 
         elif x == 2:
             perfil1.__str__()
